@@ -4,7 +4,7 @@ from tensorflow.contrib.layers import flatten
 
 
 class DenseLSTM(object):
-    def __init__(self, sess, batch=16, lr_rate=0.00001, epoch=1000, N=25, class_num=None, hidden_units=128):
+    def __init__(self, sess, batch=16, lr_rate=0.00001, epoch=1000, N=23, class_num=None, hidden_units=128):
         self.sess = sess
         self.class_num = class_num
         self.N = N
@@ -75,12 +75,12 @@ class DenseLSTM(object):
         return total_loss, acc
 
     def test_step(self, x, label_batch):
-        test_ops = [self.total_loss, self.accuracy, self.output_score]
+        test_ops = [self.accuracy, self.output_score]
         test_feed = {self.x: x, self.actual_y: label_batch, self.drop_prob: 1.0, self.trained: False}
 
-        loss, acc, score = self.sess.run(test_ops, feed_dict=test_feed)
+        acc, score = self.sess.run(test_ops, feed_dict=test_feed)
 
-        return loss, acc, score
+        return acc, score
 
     @staticmethod
     def print_status(iter_time, loss, acc, step, s_steps):
