@@ -17,9 +17,10 @@ We tested the codes with:
 
 
 #### Test Code
-- Run the code `main.py`
+- Run the code `main.py` and ensure that you set up our directories without any changes.
 ```shell
 $ python main.py --dataset_path 'Data1-Spring2020'
+```
 
 ### Citation
 Please cite us if you are using our model or dataset in your research works: <br />
