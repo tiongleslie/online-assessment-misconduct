@@ -35,3 +35,13 @@ def read_dataset(filename):
             label[i][1] = 1
 
     return np.array(data_behaviour), np.array(label)
+
+
+def read_ip_data(filename):
+    data = pd.read_excel(open(filename, 'rb'), sheet_name='Sheet1')
+    df = pd.DataFrame(data, columns=['IP'])
+
+    numpy_data = df.to_numpy()
+    IP = np.asarray(sorted(numpy_data))
+
+    return IP
