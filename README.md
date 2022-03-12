@@ -14,6 +14,9 @@ We tested the codes with:
 ### Requirements
   1) [Anaconda3](https://www.anaconda.com/distribution/#download-section)
   2) [TensorFlow-GPU 1.13.1 or Tensorflow 1.13.1](https://www.tensorflow.org/install/pip)
+  3) [Pandas](https://pandas.pydata.org/)
+  4) [Matplotlib](https://matplotlib.org/stable/)
+  5) [Scikit-learn](https://scikit-learn.org/stable/install.html)
 
 
 #### Test Code
