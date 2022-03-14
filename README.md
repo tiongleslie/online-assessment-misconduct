@@ -2,7 +2,7 @@
 
 
 ### Introduction
-This work contributes internet protocol and deep learning-based model (DenseLSTM) for online assessment misconduct detection.
+This work contributes an online assessment misconduct detection via internet protocol detector and deep learning-based behavioural monitor (DenseLSTM).
 
 
 ### Compatibility
