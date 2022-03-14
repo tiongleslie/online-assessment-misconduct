@@ -1,6 +1,3 @@
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-
 import tensorflow as tf
 import os
 import tensorflow.python.util.deprecation as deprecation
@@ -23,9 +20,10 @@ tf_config.gpu_options.allow_growth = True
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_path', help='Dataset path for evaluation.', default='Data1-Spring2020')
-    parser.add_argument('--mode', help='Evaluation mode (1: Behaviour classification, '
+    parser.add_argument('--mode', help='Evaluation mode ('
+                                       '1: Behaviour classification, '
                                        '2: Internet Protocol Detection,'
-                                       '3: Both', default=3)
+                                       '3: Both)', default=3)
 
     return parser.parse_args(argv)
 
@@ -37,7 +35,7 @@ def behaviour_classify(filename):
     test_data, test_label = read_dataset("dataset/" + filename + ".xlsx")
 
     with tf.Session(config=tf_config) as sess:
-        model = DenseLSTM(sess, batch=batch_size, class_num=config.class_num, N=config.N)
+        model = DenseLSTM(sess, class_num=config.class_num, N=config.N)
         saver = tf.train.Saver()
         saver.restore(sess, config.model_path)
         batch_arr_test = range(0, len(test_data), batch_size)
