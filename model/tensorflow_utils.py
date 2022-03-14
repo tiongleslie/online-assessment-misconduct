@@ -70,7 +70,7 @@ def dense_RNN_block(x, nb_layers, hidden_units, last_unit=False, name=None):
     return x
 
 
-def transition_layer(x, drop_prob, theta=0.5, trained=True, name=None):
+def transition_layer(x, drop_prob, theta=0.5, name=None):
     with tf.name_scope(name):
         num_transition_output_filters = int(int(x.shape[2]) * float(theta))
         relu1 = relu(x)
@@ -88,18 +88,6 @@ def concatenation(layers):
 def avg_pool(x, k=2, h=2, name='avg_pool'):
     with tf.name_scope(name):
         return tf.keras.layers.AveragePooling1D(pool_size=k, strides=h, padding="same")(x)
-
-
-def sigmoid(x, name='sigmoid'):
-    output = tf.nn.sigmoid(x, name=name)
-
-    return output
-
-
-def tanh(x, name='tanh'):
-    output = tf.nn.tanh(x, name=name)
-
-    return output
 
 
 def relu(x, name='relu'):
