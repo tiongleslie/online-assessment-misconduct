@@ -27,7 +27,7 @@ $ python main.py --dataset_path 'Data1-Spring2020' --mode 3
 
 
 ### Database
-The database is provide in [Kaggle](https://doi.org/10.34740/kaggle/dsv/3381060)
+The database is provide in [Kaggle](https://doi.org/10.34740/kaggle/dsv/3381060).
 
 
 ### Citation
