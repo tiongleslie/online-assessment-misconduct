@@ -15,7 +15,7 @@ class DenseLSTM(object):
     def _build_net(self):
         self.x = tf.placeholder(tf.float32, shape=[None, 1, self.N], name='x')
         self.drop_prob = tf.placeholder(tf.float32, name='keep_prob')
-        self.actual_y = tf.placeholder(tf.int32, shape=[None, self.class_num], name='sg') # class 0 as suspect, class 1 as normal
+        self.actual_y = tf.placeholder(tf.int32, shape=[None, self.class_num], name='sg')
         self.label_batch = tf.placeholder(tf.int32, name='label_batch')
         self.trained = tf.placeholder(tf.bool, name='trained')
         self.pred = self.DenseLSTM(self.x)

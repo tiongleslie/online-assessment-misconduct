@@ -27,9 +27,9 @@ def read_dataset(filename):
 
     label = np.zeros((numpy_data.shape[0], 2))
     for i in range(attitute.shape[0]):
-        if attitute[i][0] >= 70 and behaviour[i][0] == 1:
+        if attitute[i][0] > 75 and behaviour[i][0] == 1:
             label[i][0] = 1
-        elif attitute[i][0] >= 80 and behaviour[i][2] == 1:
+        elif attitute[i][0] > 75 and behaviour[i][2] == 1:
             label[i][0] = 1
         else:
             label[i][1] = 1
